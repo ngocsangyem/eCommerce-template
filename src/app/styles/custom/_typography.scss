@@ -1,9 +1,10 @@
 :root {
 	// font family
-	--font-primary: system-ui, sans-serif;
+	--font-primary: 'Open Sans', sans-serif;
+	--font-secondary: 'Poppins', sans-serif;
 
 	// body font size
-	--text-base-size: 1em;
+	--text-base-size: 14px;
 
 	// type scale
 	--text-scale-ratio: 1.2;
@@ -47,37 +48,3 @@ h4 {
 
 // --------------------------------
 
-// link style
-a,
-.link {}
-
-mark {
-	background-color: alpha(var(--color-accent), 0.2);
-	color: inherit;
-}
-
-.text-component {
-	--line-height-multiplier: 1;
-	--text-vspace-multiplier: 1;
-
-	blockquote {
-		padding-left: 1em;
-		border-left: 4px solid var(--color-contrast-low);
-	}
-
-	hr {
-		background: var(--color-contrast-low);
-		height: 1px;
-	}
-
-	figcaption {
-		font-size: var(--text-sm);
-		color: var(--color-contrast-medium);
-	}
-}
-
-.article {
-	// e.g., blog posts
-	--body-line-height: 1.58; // set body line-height
-	--text-vspace-multiplier: 1.2; // increase vertical spacing
-}
