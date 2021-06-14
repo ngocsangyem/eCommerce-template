@@ -4,7 +4,16 @@ block var
 	- title = 'Home'
 	- bodyClass = 'home'
 
+include @/components/button/button
+
 
 block main
 	include @/components/header/header
-	
+	+button({
+		content: 'button',
+		outline: false,
+		arrow: {
+			visible: true,
+			direction: 'left'
+		}
+	})
