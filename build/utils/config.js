@@ -85,7 +85,7 @@ try {
 	const build = {
 		globalStyles: ['app/styles/global.scss', 'app/styles/custom'],
 		mixins: 'app/styles/styles.scss',
-		templatesExtend: 'app/views/layouts/layout.pug',
+		templatesExtend: 'app/views/_layouts/_layout.pug',
 		mainComponents: 'components',
 		mainBundle: 'app',
 		bundles: ['css', 'js'],
