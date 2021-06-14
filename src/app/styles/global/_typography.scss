@@ -9,6 +9,8 @@ body {
 	font-weight: 400;
 	font-family: var(--font-primary, sans-serif);
 	color: var(--color-contrast-high, hsl(240, 4%, 20%));
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 h1,
