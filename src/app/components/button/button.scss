@@ -1,3 +1,78 @@
 @import "../../styles/styles.scss";
 
-.button {}
+.e-btn {
+	--arrow-size: 1rem;
+	--btn-radius: 12px;
+	--btn-font-size: 15px;
+	--btn-padding-y: var(--space-xs);
+	--btn-padding-x: var(--space-sm);
+
+	font-weight: 700;
+	border: 2px solid var(--color-primary-darker);
+
+	&.btn--bright {
+		border: none;
+
+		path {
+			stroke: var(--color-dark);
+		}
+	}
+
+	span {
+		line-height: 22px;
+	}
+
+	path {
+		stroke: var(--color-bg);
+	}
+
+	&[class*=btn-outline] {
+		border-color: var(--color-primary-dark);
+		color: var(--color-dark);
+
+		path {
+			stroke: var(--color-primary);
+		}
+	}
+
+	&.btn-arrow {
+		svg {
+			width: var(--arrow-size);
+			height: var(--arrow-size);
+
+			display: inline-block;
+
+			
+			margin-bottom: -0.8px;
+		}
+
+		&--left {
+			svg {
+				margin-right: 0.375rem;
+			}
+		}
+
+		&--right {
+			svg {
+				margin-left: 0.375rem;
+			}
+		}
+	}
+}
+
+@include breakpoint(lg) {
+	.e-btn {
+		--btn-padding-y: var(--space-sm);
+		--btn-padding-x: var(--space-lg);
+
+		&[class*=btn-outline] {
+			&:hover {
+				color: var(--color-bg);
+
+				path {
+					stroke: var(--color-bg);
+				}
+			}
+		}
+	}
+}
