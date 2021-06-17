@@ -1,12 +1,13 @@
 .form-control {
 	// basic form element style
-	--form-control-padding-y: var(--space-xxs); // padding top/bottom
-	--form-control-padding-x: var(--space-xs); // padding left/right
-	--form-control-radius: 0.25em; // border radius
-	--form-control-font-size: 1em; // font size
+	--form-control-padding-y: 10px; // padding top/bottom
+	--form-control-padding-x: 16px; // padding left/right
+	--form-control-radius: 12px; // border radius
+	--form-control-font-size: 0.875rem; // font size
+	--form-control-border-color: hsl(0, 0%, 82%);
 	line-height: 1.2;
 	background-color: var(--color-bg);
-	border: 2px solid var(--color-contrast-low);
+	border: 1px solid var(--form-control-border-color);
 	transition: .2s;
 
 	&::placeholder {

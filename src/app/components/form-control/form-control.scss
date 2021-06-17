@@ -1,0 +1,56 @@
+@import "../../styles/styles.scss";
+
+.form-control-wrapper {
+
+	.form-label {
+		font-size: rem(12px);
+		font-weight: 600;
+		font-family: var(--font-secondary);
+
+		color: var(--color-dark);
+	}
+
+	.form-control {
+		width: 100%;
+		height: 100%;
+	}
+
+	.icon {
+		display: block;
+		position: absolute;
+		width: var(--input-icon-size);
+		height: var(--input-icon-size);
+		top: calc(50% - var(--input-icon-size)/2);
+		pointer-events: none;
+	}
+}
+
+.form-control-group {
+	--input-icon-size: 1rem; // icon size
+	--input-icon-text-gap: var(--space-sm); // gap between icon and text
+	--form-control-padding-x: 17px;
+
+	max-width: 20rem;
+
+	position: relative;
+}
+
+.form-control-wrapper--icon-left {
+	.icon {
+		left: var(--form-control-padding-x);
+	}
+
+	.form-control {
+		padding-left: calc(var(--form-control-padding-x) + var(--input-icon-size) + var(--input-icon-text-gap));
+	}
+}
+
+.form-control-wrapper--icon-right {
+	.icon {
+		right: var(--form-control-padding-x);
+	}
+
+	.form-control {
+		padding-right: calc(var(--form-control-padding-x) + var(--input-icon-size) + var(--input-icon-text-gap));
+	}
+}

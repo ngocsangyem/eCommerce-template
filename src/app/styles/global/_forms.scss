@@ -8,6 +8,7 @@
 	padding-left: var(--form-control-padding-x, 0.75em);
 	padding-right: var(--form-control-padding-x, 0.75em);
 	border-radius: var(--form-control-radius, 0.25em);
+	border-color: var(--form-control-border-color, var(--color-contrast-low));
 }
 
 .form-legend {
