@@ -1,0 +1,12 @@
+.form-control-wrapper__search {
+	.search-btn {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+	}
+
+	.icon {
+		width: var(--input-icon-size);
+		height: var(--input-icon-size);
+	}
+}

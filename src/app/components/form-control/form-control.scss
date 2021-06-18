@@ -11,17 +11,37 @@
 	}
 
 	.form-control {
+		--form-control-placeholder-color:hsl(0, 0%, 66%);
+
 		width: 100%;
 		height: 100%;
 	}
 
-	.icon {
-		display: block;
+	.form-control--float {
 		position: absolute;
 		width: var(--input-icon-size);
 		height: var(--input-icon-size);
 		top: calc(50% - var(--input-icon-size)/2);
-		pointer-events: none;
+	}
+
+	&[class*=right] {
+		.form-control {
+			padding-right: calc(var(--form-control-padding-x) + var(--input-icon-size) + var(--input-icon-text-gap));
+		}
+
+		.form-control--float {
+			right: var(--form-control-padding-x);
+		}
+	}
+
+	&[class*=left] {
+		.form-control {
+			padding-left: calc(var(--form-control-padding-x) + var(--input-icon-size) + var(--input-icon-text-gap));
+		}
+
+		.form-control--float {
+			left: var(--form-control-padding-x);
+		}
 	}
 }
 
@@ -33,24 +53,4 @@
 	max-width: 20rem;
 
 	position: relative;
-}
-
-.form-control-wrapper--icon-left {
-	.icon {
-		left: var(--form-control-padding-x);
-	}
-
-	.form-control {
-		padding-left: calc(var(--form-control-padding-x) + var(--input-icon-size) + var(--input-icon-text-gap));
-	}
-}
-
-.form-control-wrapper--icon-right {
-	.icon {
-		right: var(--form-control-padding-x);
-	}
-
-	.form-control {
-		padding-right: calc(var(--form-control-padding-x) + var(--input-icon-size) + var(--input-icon-text-gap));
-	}
 }

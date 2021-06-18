@@ -5,6 +5,7 @@ const cssDeclarationSorter = require('css-declaration-sorter');
 const autoprefixer = require('autoprefixer');
 const sortMedia = require('postcss-sort-media-queries');
 const cssnano = require('cssnano');
+const discardDuplicates = require('postcss-discard-duplicates');
 const aliasImporter = require('node-sass-alias-importer');
 const dependents = require('../../plugins/dependents');
 
@@ -26,6 +27,7 @@ const postCssPlugins = [
 	autoprefixer({
 		grid: true,
 	}),
+	discardDuplicates(),
 	cssDeclarationSorter({
 		order: 'concentric-css',
 	}),

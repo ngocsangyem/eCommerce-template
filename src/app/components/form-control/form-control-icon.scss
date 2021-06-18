@@ -1,0 +1,17 @@
+[class*=form-control-wrapper--icon] {
+	.icon {
+		pointer-events: none;
+	}
+}
+
+.form-control-wrapper--icon-left {
+	.icon {
+		left: var(--form-control-padding-x);
+	}
+}
+
+.form-control-wrapper--icon-right {
+	.icon {
+		right: var(--form-control-padding-x);
+	}
+}
