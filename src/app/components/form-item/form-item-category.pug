@@ -1,0 +1,13 @@
+mixin form-item-category(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.categories = data.categories || [{name: 'All categories', value: 'all-categories'},{name: 'apple', value: 'apple'}]
+	- data.placeholder = data.placeholder || ''
+	- data.field = { select: { name: '', id: '', class: '' }, input: { name: '', id: '', class: '' }, container: 'js-select' }
+
+	.form-item.form-item__category(class=data.class)
+		.form-control-group(class=data.field.container)&attributes(attributes)
+			select(name=data.field.select.name id=data.field.select.id, class=data.field.select.class)
+				each category in data.categories
+					option(value=category.value)=category.name
+			input.form-item__category-input(type="text" name=data.field.input.name id=data.field.input.id placeholder=data.field.placeholder)
