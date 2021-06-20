@@ -7,6 +7,7 @@ block var
 include @/components/button/button
 include @/components/form-item/form-item
 include @/components/form-item/form-item-category
+include @/components/form-item/form-item-checkbox
 
 
 block main
@@ -62,14 +63,21 @@ block main
 	//- 	},
 	//- })(data-trigger-class="custom-select form-control")
 
-	+form-item-category({
-		class: '',
-		field: {
-			select: {
-				id: 'selectCategories'
-			},
-			input: {
-				placeholder: 'Search Products, categories ...',
-			},
-		}
+	//- +form-item-category({
+	//- 	class: '',
+	//- 	field: {
+	//- 		select: {
+	//- 			id: 'selectCategories'
+	//- 		},
+	//- 		input: {
+	//- 			placeholder: 'Search Products, categories ...',
+	//- 		},
+	//- 	}
+	//- })
+
+	+form-item-checkbox({
+		checkbox: {
+			id: 'checkbox-1'
+		},
+		label: 'Check this'
 	})

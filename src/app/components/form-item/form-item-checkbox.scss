@@ -1,0 +1,111 @@
+.form-item__checkbox {
+	--checkbox-radio-size: 20px;
+	--checkbox-radio-gap: 10px; // gap between button and label
+	--checkbox-radio-border-width: 1.5px;
+	--checkbox-radio-line-height: var(--body-line-height);
+
+	// radio buttons
+	--radio-marker-size: 8px;
+
+	// checkboxes
+	--checkbox-marker-size: 12px;
+	--checkbox-radius: 4px;
+
+	.checkbox-label {
+		span {
+			font-size: rem(14px);
+			font-family: var(--font-primary);
+
+			color: var(--color-contrast-high);
+
+			display: inline-block;
+		}
+	}
+}
+
+.checkbox {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	margin-top: calc((1em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
+	opacity: 0;
+	height: var(--checkbox-radio-size);
+	width: var(--checkbox-radio-size);
+	pointer-events: none;
+
+	+label {
+		display: inline-flex;
+		align-items: flex-start;
+		line-height: var(--checkbox-radio-line-height);
+		user-select: none;
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			box-sizing: border-box;
+			display: inline-block;
+			position: relative;
+			// top: calc((1em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
+			flex-shrink: 0;
+			width: var(--checkbox-radio-size);
+			height: var(--checkbox-radio-size);
+			background-color: var(--color-bg);
+			border-width: var(--checkbox-radio-border-width);
+			border-color: var(--form-border-color, hsl(0, 0%, 82%));
+			border-style: solid;
+			background-repeat: no-repeat;
+			background-position: center;
+			margin-right: var(--checkbox-radio-gap);
+			transition: transform .2s, border .2s;
+
+			border-radius: var(--checkbox-radius);
+		}
+	}
+
+
+
+	&:active {
+		+label {
+			&::before {
+				transform: scale(0.8);
+				transition: transform .2s;
+			}
+		}
+	}
+
+	&:checked {
+		+label {
+			&::before {
+				background-color: var(--color-primary);
+				box-shadow: none;
+				border-color: var(--color-primary-darker);
+				transition: transform .2s;
+
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+				background-size: var(--checkbox-marker-size);
+				background-position: 2px 2px;
+			}
+		}
+
+		&:active {
+			+label::before {
+				transform: none;
+				transition: none;
+			}
+		}
+
+		&:active,
+		&:focus {
+			+label {
+				span {
+					color: var(--color-dark);
+				}
+
+				&::before {
+					border-color: var(--color-primary-darker);
+					box-shadow: 0 0 0 3px alpha(var(--color-primary), 0.2);
+				}
+			}
+		}
+	}
+}

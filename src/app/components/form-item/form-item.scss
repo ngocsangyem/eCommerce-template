@@ -1,6 +1,7 @@
 @import "@/styles/styles.scss";
 
 .form-item {
+	--form-border-color: hsl(0, 0%, 82%);
 
 	.form-label {
 		font-size: rem(12px);

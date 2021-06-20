@@ -4,7 +4,7 @@
 	--form-control-padding-x: 16px; // padding left/right
 	--form-control-radius: 12px; // border radius
 	--form-control-font-size: 0.875rem; // font size
-	--form-control-border-color: hsl(0, 0%, 82%);
+	--form-control-border-color: var(--form-border-color, hsl(0, 0%, 82%));
 	line-height: 1.2;
 	background-color: var(--color-bg);
 	border: 1px solid var(--form-control-border-color);

@@ -1,0 +1,10 @@
+mixin form-item-checkbox(data)
+	- data = data || {}
+	- data.label = data.label || ''
+	- data.checkbox = { checked: false, name: '', id: '', ...data.checkbox }
+
+	.form-item.form-item__checkbox
+		input.checkbox(type="checkbox" checked=data.checkbox.checked id=data.checkbox.id name=data.checkbox.name)
+		label.checkbox-label(for=data.checkbox.id )
+			if data.label
+				span=data.label
