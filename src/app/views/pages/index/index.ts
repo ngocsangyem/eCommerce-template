@@ -10,7 +10,7 @@ export class IndexComponent {
 	}
 
 	handleCustomSelect() {
-		this.formCustomSelect = new FormItemSelect('.form-item__select .js-select', {wrapper: 'custom-select-wrapper'});
+		this.formCustomSelect = new FormItemSelect('.form-item__select:not(.form-item__category) .js-select', {wrapper: 'custom-select-wrapper'});
 		this.categoryCustomSelect = new FormItemSelect('.form-item__category .js-select', {wrapper: 'custom-select-wrapper'});
 	}
 

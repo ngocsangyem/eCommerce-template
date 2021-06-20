@@ -2,12 +2,17 @@ mixin form-item-category(data)
 	- data = data || {}
 	- data.class = data.class || ''
 	- data.categories = data.categories || [{name: 'All categories', value: 'all-categories'},{name: 'apple', value: 'apple'}]
-	- data.placeholder = data.placeholder || ''
-	- data.field = { select: { name: '', id: '', class: '' }, input: { name: '', id: '', class: '' }, container: 'js-select' }
+	- data.field = { select: { name: '', id: '', class: '' }, input: { name: '', id: '', class: '', placeholder: 'Search Products, categories ..' }}
 
-	.form-item.form-item__category(class=data.class)
-		.form-control-group(class=data.field.container)&attributes(attributes)
-			select(name=data.field.select.name id=data.field.select.id, class=data.field.select.class)
+	.form-item.form-item__category.form-item__select.form-item__search--right
+		.form-control-group.form-control.js-select(data-trigger-class="custom-select")
+			label(for="searchCategories" class="is-hidden") 
+			select(name='search-category' id='searchCategories')
 				each category in data.categories
 					option(value=category.value)=category.name
-			input.form-item__category-input(type="text" name=data.field.input.name id=data.field.input.id placeholder=data.field.placeholder)
+			input.form-item__category-input.reset(type="text" name=data.field.input.name id=data.field.input.id placeholder=data.field.input.placeholder)
+			button.search-btn.reset.form-control--float
+				svg.icon(viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+					path(d='M22.9833 28.5833C29.4266 28.5833 34.65 23.36 34.65 16.9167C34.65 10.4733 29.4266 5.25 22.9833 5.25C16.54 5.25 11.3167 10.4733 11.3167 16.9167C11.3167 23.36 16.54 28.5833 22.9833 28.5833Z' stroke='#151515' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='bevel')
+					path(d='M14.5335 25.5999L6.7168 33.4165' stroke='#151515' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='bevel')
+

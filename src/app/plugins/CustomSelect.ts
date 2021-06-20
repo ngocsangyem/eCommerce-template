@@ -30,9 +30,9 @@ export class CustomSelect {
 		this.options = this.select.querySelectorAll('option');
 		this.selectedOption = this.getSelectedOptionText();
 		this.selectId = <string>this.select.getAttribute('id');
-		this.arrowIcon = this.element.querySelectorAll('svg');
+		this.arrowIcon = this.element.querySelectorAll('svg.arrow-icon');
 		this.label = <HTMLLabelElement>document.querySelector('[for="' + this.selectId + '"]');
-
+		
 		if (setting) {
 			this.setting = {...setting};
 		}
@@ -43,8 +43,8 @@ export class CustomSelect {
 	}
 
 	initCustomSelect() {
-		this.element.insertAdjacentHTML(
-			'beforeend',
+		this.select.insertAdjacentHTML(
+			'afterend',
 			this.initButtonSelect() + this.initListSelect()
 		);
 
@@ -251,7 +251,7 @@ export class CustomSelect {
 		const optionHtml = this.options[this.select.selectedIndex].innerHTML;
 		const label = `${optionHtml}, ${this.label.textContent}`;
 		let button = `
-			<button type="button" class="js-select__button form-control reset select__button ${customClasses}" aria-label="${label}" aria-expanded="false" aria-controls="${this.selectId}-dropdown">
+			<button type="button" class="js-select__button reset select__button ${customClasses}" aria-label="${label}" aria-expanded="false" aria-controls="${this.selectId}-dropdown">
 				<span aria-hidden="true" class="js-select__label select__label">
 					${this.selectedOption}
 				</span>

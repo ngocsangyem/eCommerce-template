@@ -45,8 +45,10 @@
 		}
 	}
 
-	.custom-wrapper {
-		width: 100%;
+	&:not(.form-item__category) {
+		.custom-wrapper {
+			width: 100%;
+		}
 	}
 }
 

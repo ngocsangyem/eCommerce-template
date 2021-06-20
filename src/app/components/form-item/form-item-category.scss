@@ -1,0 +1,46 @@
+.form-item__category {
+	--select-icon-size: 16px;
+	--select-icon-right-margin: var(--space-sm); // icon margin right
+	--select-text-icon-gap: var(--space-xxxs); // gap between text and icon
+
+	.form-control-group {
+		flex-wrap: wrap;
+		align-items: stretch;
+
+		max-width: 31.25rem;
+	}
+
+	.select__button,
+	.select__item {
+		font-size: rem(15px);
+	}
+
+	.select__button {
+		font-weight: 700;
+		font-family: var(--font-secondary);
+
+		padding-right: rem(24px);
+
+		width: rem(130px);
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.form-item__category-input {
+	position: relative;
+	flex: 1 1 auto;
+
+	width: 1%;
+	min-width: 0;
+	height: 100%;
+	padding-left: rem(24px);
+
+	border-left: 1px solid var(--form-control-border-color);
+
+	&:focus {
+		outline: none;
+	}
+}
