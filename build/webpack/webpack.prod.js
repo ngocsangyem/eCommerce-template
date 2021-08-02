@@ -1,4 +1,5 @@
 const { merge } = require('webpack-merge');
+const { ESBuildMinifyPlugin, ESBuildPlugin } = require('esbuild-loader');
 
 const { WebpackCommonConfig } = require('./webpack.common');
 
@@ -14,7 +15,13 @@ const WebpackProdConfig = merge(WebpackCommonConfig, {
 
 	optimization: {
 		minimize: true,
+		minimizer: [
+			new ESBuildMinifyPlugin({
+				target: 'es2015',
+			}),
+		],
 	},
+	plugins: [new ESBuildPlugin()],
 });
 
 module.exports = { WebpackProdConfig };
